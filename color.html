@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Background Color</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0; /* 초기 배경색 설정 */
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    #colorDisplay {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .colorLabel {
+        font-weight: bold;
+    }
+    .colorValue {
+        font-family: monospace;
+        margin-left: 5px;
+    }
+</style>
+</head>
+<body>
+<button onclick="changeBackgroundColor()">Change Background Color</button>
+<div id="colorDisplay"></div>
+
+<script>
+    function changeBackgroundColor() {
+        // 랜덤한 RGB 값 생성
+        var red = Math.floor(Math.random() * 256);
+        var green = Math.floor(Math.random() * 256);
+        var blue = Math.floor(Math.random() * 256);
+        
+        // RGB 값을 문자열로 결합하여 CSS 배경색으로 설정
+        var color = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+        document.body.style.backgroundColor = color;
+
+        // RGB 값 및 Hex 값 표시
+        var colorDisplay = document.getElementById('colorDisplay');
+        colorDisplay.innerHTML = '<span class="colorLabel">RGB:</span> <span class="colorValue">' + red + ', ' + green + ', ' + blue + '</span><br>' + '<span class="colorLabel">Hex:</span> <span class="colorValue">' + rgbToHex(red, green, blue) + '</span>';
+    }
+
+    // RGB를 Hex로 변환하는 함수
+    function rgbToHex(r, g, b) {
+        var redHex = r.toString(16).padStart(2, '0');
+        var greenHex = g.toString(16).padStart(2, '0');
+        var blueHex = b.toString(16).padStart(2, '0');
+        return '#' + redHex + greenHex + blueHex;
+    }
+</script>
+</body>
+</html>

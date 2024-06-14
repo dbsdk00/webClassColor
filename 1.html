@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인터랙티브 예술 작품 갤러리</title>
+    <style>
+        /* CSS 스타일링 */
+        .artwork {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>인터랙티브 예술 작품 갤러리</h1>
+    <div id="gallery">
+        <div class="artwork" onclick="showInfo('artwork1')">작품 1</div>
+        <div class="artwork" onclick="showInfo('artwork2')">작품 2</div>
+        <div class="artwork" onclick="showInfo('artwork3')">작품 3</div>
+        <!-- 추가적인 작품들을 여기에 추가할 수 있습니다 -->
+    </div>
+    <div id="info">
+        <!-- 작품 정보가 표시될 곳 -->
+    </div>
+    <script>
+        // JavaScript 코드
+        function showInfo(artworkId) {
+            // 각 작품에 대한 정보를 저장하는 객체 (예시)
+            const artworks = {
+                artwork1: {
+                    title: "작품 1",
+                    artist: "아티스트 1",
+                    year: "2024",
+                    description: "이 작품은..."
+                },
+                artwork2: {
+                    title: "작품 2",
+                    artist: "아티스트 2",
+                    year: "2023",
+                    description: "이 작품은..."
+                },
+                artwork3: {
+                    title: "작품 3",
+                    artist: "아티스트 3",
+                    year: "2022",
+                    description: "이 작품은..."
+                }
+                // 추가 작품 정보를 여기에 추가할 수 있습니다
+            };
+
+            const artwork = artworks[artworkId];
+            document.getElementById("info").innerHTML = `
+                <h2>${artwork.title}</h2>
+                <p><strong>아티스트:</strong> ${artwork.artist}</p>
+                <p><strong>제작년도:</strong> ${artwork.year}</p>
+                <p>${artwork.description}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
