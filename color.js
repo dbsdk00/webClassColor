@@ -67,7 +67,7 @@ function applyHexColor() {
     }
 }
 
-// RGB 색상값을 적용하는 함수
+// RGB 색상값을 적용하는 함수       
 function applyRgbColor() {
     let color = rgbInput.value.trim();
     if (isValidColor(color)) {

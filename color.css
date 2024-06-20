@@ -56,9 +56,13 @@ canvas {
 }
 #hexInput {
     /* 16 input box */
+    width: 150px;
+
 }
 #rgbInput {
     /* rgb input box */
+    width: 150px;
+
 }
 #applyHexColorButton {
     /* 16진수 색상적용 버튼 */
