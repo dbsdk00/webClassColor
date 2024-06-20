@@ -1,0 +1,78 @@
+body {
+    text-align: center;
+    padding-top: 100px;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px; /* 버튼 간격 조정 */
+}
+button:hover {
+    background-color: pink;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+#imageSection {
+    margin-top: 20px;
+    position: relative;
+}
+canvas {
+    max-width: 400px;
+    cursor: crosshair;
+}
+.copyButton1 {
+    width: 70px;
+}
+.copyButton2 {
+    width: 70px;
+}
+#colorPalette {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.colorBox {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    cursor: Crosshair;
+}
+#hexInput {
+    /* 16 input box */
+}
+#rgbInput {
+    /* rgb input box */
+}
+#applyHexColorButton {
+    /* 16진수 색상적용 버튼 */
+    width: 150px;
+}
+#applyRgbColorButton {
+    /* rgb 색삭 적용 버튼 */
+    width: 150px;
+}
+#changeBgColorButton {
+    /* 랜덤 배경색 변경 버튼 */
+    width: 150px;
+}
+#uploadImageButton {
+    /* 이미지 업로드 버튼 */
+    width: 150px;
+}
