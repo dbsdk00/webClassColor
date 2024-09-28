@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>이벤트 처리 예시</title>
+<title>Color Extraction</title>
+<link rel="icon" href="https://i.postimg.cc/m2Wvb7pc/free-icon-rainbow-2790220.png">
 <link rel="stylesheet" href="color.css">
 </head>
 <body>
@@ -11,14 +12,15 @@
 <h1 id="heading">색상코드를 입력하거나 버튼을 클릭하세요!</h1>
 <input type="text" id="hexInput" placeholder="#RRGGBB 형식으로 입력" value="#">
 <button id="applyHexColorButton">16진수 색상 적용</button>
-<button id="copyHexColorButton" class="copyButton1">복사</button> <br>
+<button id="copyHexColorButton" class="copyBtn">복사</button> <br>
 
 <input type="text" id="rgbInput" placeholder="rgb(R, G, B) 형식으로 입력">
 <button id="applyRgbColorButton">RGB 색상 적용</button>
-<button id="copyRgbColorButton" class="copyButton2">복사</button><br>
+<button id="copyRgbColorButton" class="copyBtn">복사</button><br>
 <button id="changeBgColorButton">랜덤 배경색 변경</button><br>
 <input type="file" id="imageInput" accept="image/*" style="display:none;">
 <button id="uploadImageButton">이미지 업로드</button>
+
 <div id="imageSection">
     <canvas id="imageCanvas"></canvas>
 </div>

@@ -5,6 +5,7 @@ body {
     transition: background-color 0.5s ease;
 }
 button {
+    width: 150px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -12,11 +13,13 @@ button {
     background-color: black;
     color: white;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
     margin-bottom: 10px; /* 버튼 간격 조정 */
+    transition: all 0.5s ease;
+    
 }
 button:hover {
-    background-color: pink;
+    background-color: rgb(184, 177, 177);
+    color: rgb(14, 13, 13);
 }
 
 input {
@@ -36,12 +39,13 @@ canvas {
     cursor: crosshair;
     border-radius: 10px;
 }
-.copyButton1 {
+.copyBtn {
     width: 70px;
 }
-.copyButton2 {
-    width: 70px;
+.copyBtn:hover {
+    background-color: rgb(169, 167, 167);
 }
+
 #colorPalette {
     display: flex;
     flex-wrap: wrap;
@@ -64,20 +68,4 @@ canvas {
     /* rgb input box */
     width: 150px;
 
-}
-#applyHexColorButton {
-    /* 16진수 색상적용 버튼 */
-    width: 150px;
-}
-#applyRgbColorButton {
-    /* rgb 색삭 적용 버튼 */
-    width: 150px;
-}
-#changeBgColorButton {
-    /* 랜덤 배경색 변경 버튼 */
-    width: 150px;
-}
-#uploadImageButton {
-    /* 이미지 업로드 버튼 */
-    width: 150px;
 }
