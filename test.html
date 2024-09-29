@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 웹사이트</title>
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .flex-item {
+      flex-basis: 45%;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .text {
+      font-size: 4vw;
+    }
+    
+    @media only screen and (max-width: 768px) {
+      .flex-item {
+        flex-basis: 100%;
+      }
+      
+      .text {
+        font-size: 3.5vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="flex-container">
+      <div class="flex-item">
+        <img src="https://i.postimg.cc/m2Wvb7pc/free-icon-rainbow-2790220.png" alt="이미지 1">
+      </div>
+      <div class="flex-item">
+        <img src="https://i.postimg.cc/m2Wvb7pc/free-icon-rainbow-2790220.png" alt="이미지 2">
+      </div>
+    </div>
+    <p class="text">이 텍스트는 반응형으로 크기가 조절됩니다.</p>
+  </div>
+</body>
+</html>
