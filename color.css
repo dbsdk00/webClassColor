@@ -1,16 +1,15 @@
 body {
     text-align: center;
-    padding-top: 100px;
+    padding-top: 50px;
     font-family: Arial, sans-serif;
     transition: background-color 0.5s ease;
 }
 button {
-    width: 180px;
     padding: 1vw 2vw;
     cursor: pointer;
     border: none;
-    background-color: rgb(12, 12, 12);
-    color: white;
+    background-color: rgb(55, 55, 55);
+    color: rgb(234, 234, 234);
     justify-content: center; /* 가로 중앙 정렬 */
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */ /* 이거닷 */
     border-radius: 5px;
@@ -20,8 +19,11 @@ button {
     min-height: 42px; /* 최소 높이 */
 }
 button:hover {
-    background-color: rgb(184, 177, 177);
-    color: rgb(13, 13, 13);
+    background-color: rgb(234, 234, 234);;
+    color: rgb(55, 55, 55);
+}
+.button {
+    width: clamp(180px, 2vw, 210px);
 }
 @media only screen and (max-width: 768px) {
     button {
@@ -40,7 +42,6 @@ input {
     font-size: clamp(18px, 2vw, 24px); /* 최소 14px, 최대 24px */
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */ /* 이거닷 */
     min-height: 42px; /* 최소 높이 */
-
   }  
 #imageSection {
     margin-top: 20px;
@@ -56,11 +57,12 @@ canvas {
 }
 .copyBtn {
     width: 70px;
-    width: clamp(80px, 20vw, 100px); /* 최소 80, 최대 20 */
+    width: clamp(80px, 20vw, 85px); /* 최소 80, 최대 20 */
     min-height: 42px; /* 최소 높이 */
+    color: rgb(234, 234, 234);
 }
-.copyBtn:hover {
-    background-color: rgb(169, 167, 167);
+.copyBtn:active {
+    background-color: rgb(55, 55, 55);
 }
 @media only screen and (max-width: 768px) {
     .copyBtn {
@@ -69,7 +71,7 @@ canvas {
   }
 #colorPalette {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
     margin-top: 2vw;
 }
@@ -85,3 +87,8 @@ canvas {
       width: 12vw; /* 작은 화면에서 전체 너비로 설정 */
     }
 }
+
+.image {
+    width: 40vw; /* 이미지는 부모의 너비에 맞춰 크기 조절 */
+    height: 40vw; /* 비율을 유지하면서 크기 조절 */
+  }

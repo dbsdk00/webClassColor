@@ -84,7 +84,7 @@ function copyToClipboard(text, button) {
     navigator.clipboard.writeText(text)
         .then(() => {
             button.textContent = '완료';
-            button.style.backgroundColor = 'skyblue'; // 복사를 눌렀을 때 변하는 버튼 색상
+            button.style.backgroundColor = 'steelblue'; // 복사를 눌렀을 때 변하는 버튼 색상
             setTimeout(() => {
                 button.textContent = '복사';
                 button.style.backgroundColor = ''; // pink heheeeee
@@ -164,23 +164,43 @@ function getColorFromPalette(color) {
     rgbInput.value = rgbColor;
 }
 
+
+
+
+// 모바일 색상 추출 안됨 해결
 // 캔버스 클릭 시 색상 추출 및 팔레트에 추가하는 함수
 imageCanvas.addEventListener('click', (e) => {
     if (!imageInput.files[0]) {
         return; // 이미지 파일이 없으면 함수 종료
     }
 
-    const rect = imageCanvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const ctx = imageCanvas.getContext('2d');
+    const rect = imageCanvas.getBoundingClientRect(); // 캔버스의 위치와 크기 정보
+
+    // scaleX, scaleY 계산
+    const scaleX = imageCanvas.width / rect.width;   // 가로 스케일링
+    const scaleY = imageCanvas.height / rect.height; // 세로 스케일링
+
+    // 스케일링을 적용한 클릭 좌표 계산
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
+
+    // 해당 좌표의 색상 정보 추출
     const imageData = ctx.getImageData(x, y, 1, 1).data;
     const [r, g, b] = imageData;
     const hexColor = rgbToHex(r, g, b);
     const rgbColor = `rgb(${r}, ${g}, ${b})`;
 
+    // 배경색 변경 및 색상 입력란 업데이트
     changeBackgroundColor(hexColor);
     hexInput.value = hexColor;
     rgbInput.value = rgbColor;
 
-    addColorToPalette(hexColor); // 추출한 색상을 팔레트에 추가
+    // 팔레트에 추출한 색상 추가
+    addColorToPalette(hexColor);
 });
+
+// RGB 값을 16진수로 변환하는 함수
+function rgbToHex(r, g, b) {
+    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
+}
