@@ -25,7 +25,7 @@ button:hover {
 }
 @media only screen and (max-width: 768px) {
     button {
-      width: 60%; /* 작은 화면에서 전체 너비로 설정 */
+      width: 100%; /* 작은 화면에서 전체 너비로 설정 */
     }
   }
 input {
@@ -33,15 +33,15 @@ input {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-right: 10px;
+    margin-right: 5px;
     margin-bottom: 10px;
 }
 .text { /* 반응형 글씨 */
-    font-size: clamp(16px, 2vw, 24px); /* 최소 14px, 최대 24px */
+    font-size: clamp(18px, 2vw, 24px); /* 최소 14px, 최대 24px */
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */ /* 이거닷 */
-  }
+    min-height: 42px; /* 최소 높이 */
 
-  
+  }  
 #imageSection {
     margin-top: 20px;
     position: relative;
@@ -57,7 +57,7 @@ canvas {
 .copyBtn {
     width: 70px;
     width: clamp(80px, 20vw, 100px); /* 최소 80, 최대 20 */
-    height: 42px;
+    min-height: 42px; /* 최소 높이 */
 }
 .copyBtn:hover {
     background-color: rgb(169, 167, 167);
@@ -65,7 +65,6 @@ canvas {
 @media only screen and (max-width: 768px) {
     .copyBtn {
       width: 30%; /* 작은 화면에서 전체 너비로 설정 */
-      height: 100%;
     }
   }
 #colorPalette {
