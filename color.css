@@ -39,7 +39,7 @@ input {
     margin-bottom: 10px;
 }
 .text { /* 반응형 글씨 */
-    font-size: clamp(18px, 2vw, 24px); /* 최소 14px, 최대 24px */
+    font-size: clamp(14px, 3vw, 24px); /* 최소 14px, 최대 24px */
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */ /* 이거닷 */
     min-height: 42px; /* 최소 높이 */
   }  
