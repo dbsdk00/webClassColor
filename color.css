@@ -5,7 +5,7 @@ body {
     transition: background-color 0.5s ease;
 }
 button {
-    padding: 1vw 2vw;
+    padding: 1vw 1vw;
     cursor: pointer;
     border: none;
     background-color: rgb(55, 55, 55);
@@ -15,34 +15,41 @@ button {
     border-radius: 5px;
     margin-bottom: 1vw;
     transition: all 0.5s ease;
-    width: clamp(140px, 20vw, 160px);
-    min-height: 42px; /* 최소 높이 */
+    height: 42px; /* 최소 높이 */
+    max-width: 18vw;
+    min-width: 150px;
+    font-size: 14px;
 }
 button:hover {
     background-color: rgb(234, 234, 234);;
     color: rgb(55, 55, 55);
 }
 .button {
-    width: clamp(180px, 2vw, 210px);
+    width: clamp(186px, 30%, 190px);
 }
 @media only screen and (max-width: 768px) {
-    button {
+    .buttin {
       width: 100%; /* 작은 화면에서 전체 너비로 설정 */
     }
   }
-input {
+
+.text { /* 반응형 글씨 */
+    font-size: clamp(16px, 2vw, 24px); /* 최소 14px, 최대 24px */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */ /* 이거닷 */
+    padding-bottom: 10px;
+  }
+.textBox {
+    width: clamp(180px, 10vw, 200px);
+    max-width:  18vw;
+    min-width: 150px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-right: 5px;
     margin-bottom: 10px;
+    max-height: 42px; /* 최소 높이 */
 }
-.text { /* 반응형 글씨 */
-    font-size: clamp(14px, 3vw, 24px); /* 최소 14px, 최대 24px */
-    white-space: nowrap; /* 텍스트 줄바꿈 방지 */ /* 이거닷 */
-    min-height: 42px; /* 최소 높이 */
-  }  
 #imageSection {
     margin-top: 20px;
     position: relative;
@@ -56,8 +63,8 @@ canvas {
     border-radius: 10px;
 }
 .copyBtn {
-    width: 70px;
-    width: clamp(80px, 20vw, 85px); /* 최소 80, 최대 20 */
+    min-width: 60px;
+    max-width: 9vw;
     min-height: 42px; /* 최소 높이 */
     color: rgb(234, 234, 234);
 }
@@ -66,7 +73,7 @@ canvas {
 }
 @media only screen and (max-width: 768px) {
     .copyBtn {
-      width: 30%; /* 작은 화면에서 전체 너비로 설정 */
+      width: 100%; /* 작은 화면에서 전체 너비로 설정 */
     }
   }
 #colorPalette {
@@ -89,6 +96,6 @@ canvas {
 }
 
 .image {
-    width: 40vw; /* 이미지는 부모의 너비에 맞춰 크기 조절 */
-    height: 40vw; /* 비율을 유지하면서 크기 조절 */
+    max-width: 40vw;
+    max-height: 40vw;
   }
